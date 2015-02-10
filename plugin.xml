@@ -24,7 +24,7 @@
     <license>Apache 2.0</license>
     <keywords>cordova,metadata</keywords>
 
-    <js-module src="www/androidmediametadataretriever.js" name="AndroidMediaMetaDataRetriever">
+    <js-module src="www/android/androidmediametadataretriever.js" name="AndroidMediaMetaDataRetriever">
       <clobbers target="AndroidMediaMetaDataRetriever" />
     </js-module>
   
