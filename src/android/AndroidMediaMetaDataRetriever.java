@@ -94,9 +94,9 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 		  String strPath = getPath(context, myUri);
 		  objFile = new File(strPath);	
 		  
-		  Cursor returnCursor = getContentResolver().query(myUri, null, null, null, null);
+		  Cursor returnCursor = context.getContentResolver().query(myUri, null, null, null, null);
 		  int sizeIndex = returnCursor.getColumnIndex(OpenableColumns.SIZE);
-		  Log.i("CC", "XXXXXXXXXsizeIndex = " + sizeIndex);
+		  Log.i("CC", "XXXXXXsizeIndex = " + sizeIndex);
 		}
 		
 		//File objFile = new File(strMediaURL);
