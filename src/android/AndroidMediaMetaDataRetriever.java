@@ -316,7 +316,7 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 	
 	            final String id = DocumentsContract.getDocumentId(uri);
 	            final Uri contentUri = ContentUris.withAppendedId(
-	                    Uri.parse("content://com.google.android.apps.docs.storage"), Long.valueOf(id));
+	                    Uri.parse("content://com.google.android.apps.docs.storage"), id);
 	
 	            return getDataColumn(context, contentUri, null, null);
 	        }
