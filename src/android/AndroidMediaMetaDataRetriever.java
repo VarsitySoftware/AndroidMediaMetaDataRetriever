@@ -221,8 +221,8 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 				returnJSON.put("fileWidth", strVideoWidth);
 				returnJSON.put("fileHeight", strVideoHeight);
 				returnJSON.put("fileOrientation", strFileOrientation);
-				returnJSON.put("fileLatitude", strFileLocation.trim());
-				returnJSON.put("fileLongitude", strFileLocation.trim());				
+				returnJSON.put("fileLatitude", strFileLocation;
+				returnJSON.put("fileLongitude", strFileLocation;				
 				returnJSON.put("fileFPS", "0");
 				returnJSON.put("videoAngleInDegree", strVideoRotation);
 				returnJSON.put("fileDuration", lngDurationInSeconds);				
@@ -233,7 +233,7 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 				Log.i("CC", "fltImgWidth = " + strVideoWidth);
 				Log.i("CC", "fltImgHeight = " + strVideoHeight);
 				Log.i("CC", "fileURL = " + strMediaURL);
-				Log.i("CC", "fileLatitude = " + strFileLocation);
+				Log.i("CC", "fileLocation = " + strFileLocation);
 				Log.i("CC", "fileType = " + strFileMimeType);
 				Log.i("CC", "fileFPS = " + strBitrate);
 				Log.i("CC", "videoAngleInDegree = " + strVideoRotation);
