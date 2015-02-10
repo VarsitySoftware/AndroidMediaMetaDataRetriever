@@ -86,7 +86,7 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 		
 		//File objFile = new File(strMediaURL);
 		long lngPos = strMediaURL.lastIndexOf("/");
-		string strFileName = strMediaURL.substring(lngPos + 1);
+		String strFileName = strMediaURL.substring(lngPos + 1);
 		File objFile = new File(Environment.getExternalStorageDirectory(), strFileName);
 		
 		long lngLength = objFile.length();
