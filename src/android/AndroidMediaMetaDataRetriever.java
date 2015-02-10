@@ -86,7 +86,9 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 		
 		File objFile = new File(strMediaURL);
 		
-		if (objFile == null)
+		int intPos = strMediaURL.indexOf("content://");
+		
+		if (intPos != -1)
 		{
 		  Uri myUri = Uri.parse(strMediaURL);
 		  String strPath = getPath(context, myUri);
