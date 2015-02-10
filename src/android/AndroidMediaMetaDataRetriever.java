@@ -238,6 +238,7 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 				Log.i("CC", "fileFPS = " + strBitrate);
 				Log.i("CC", "videoAngleInDegree = " + strVideoRotation);
 				Log.i("CC", "fileDuration = " + lngDurationInSeconds);
+				Log.i("CC", "base64 = " + strThumbnail);
 				//Log.i("CC", "fileSize = " + lngLength);
 			}
 			catch (JSONException e)
