@@ -145,8 +145,9 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 		{	
 			if (strMediaURL.startsWith("content://") == true)
 			{
-				webView.sendJavascript("onAndroidFileSelectedPathError();");
-				return;
+				strMediaURL = getPath(context, uriMediaURL);
+				//webView.sendJavascript("onAndroidFileSelectedPathError();");
+				//return;
 			}
 			
 			Bitmap bmThumbnail = ThumbnailUtils.createVideoThumbnail(strMediaURL,Thumbnails.MINI_KIND);
