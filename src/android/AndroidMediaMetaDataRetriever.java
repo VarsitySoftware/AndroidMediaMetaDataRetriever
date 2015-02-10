@@ -314,11 +314,11 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 	        // GoogleDriveProvider
 	        else if (isGoogleDriveDocument(uri)) {
 	
-	            final String id = DocumentsContract.getDocumentId(uri);
+	            //final String id = DocumentsContract.getDocumentId(uri);
 	            //final Uri contentUri = ContentUris.withAppendedId(
 	            //        Uri.parse("content://com.google.android.apps.docs.storage"), id);
 	
-	            return getDataColumn(context, uri, null, null);
+	            return uri.getPath();
 	        }
 	        // MediaProvider
 	        else if (isMediaDocument(uri)) {
