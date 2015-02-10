@@ -145,16 +145,20 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 		{	
 			if (strMediaURL.startsWith("content://") == true)
 			{
-				String res = null;
-    				String[] proj = { MediaStore.Images.Media.DATA };
-    				Cursor cursor = context.getContentResolver().query(uriMediaURL, proj, null, null, null);
-			        if(cursor.moveToFirst()){;
-			          int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-			          res = cursor.getString(column_index);
-			        }
-			        cursor.close();
-			        strMediaURL = res;
+				//String res = null;
+    				//String[] proj = { MediaStore.Images.Media.DATA };
+    				//Cursor cursor = context.getContentResolver().query(uriMediaURL, proj, null, null, null);
+			        //if(cursor.moveToFirst()){;
+			        //  int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+			        //  res = cursor.getString(column_index);
+			        //}
+			        //cursor.close();
+			        //strMediaURL = res;
     
+    				int intPos = strMediaURL.lastIndexOf("/") + 1;
+				String strFileName = strMediaURL.substring(intPos);
+				strMediaURL = Environment.getExternalStorageDirectory() + "/" + strFileName;
+		
 				//strMediaURL = getPath(context, uriMediaURL);
 				Log.i("CC", "VIDEOstrMediaURL = " + strMediaURL);	
 				//webView.sendJavascript("onAndroidFileSelectedPathError();");
