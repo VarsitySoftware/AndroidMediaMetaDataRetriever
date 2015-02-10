@@ -155,8 +155,8 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 			        //cursor.close();
 			        //strMediaURL = res;
     
-    				int intPos = strMediaURL.lastIndexOf("/") + 1;
-				String strFileName = strMediaURL.substring(intPos);
+    				int intPosLast = strMediaURL.lastIndexOf("/") + 1;
+				String strFileName = strMediaURL.substring(intPosLast);
 				strMediaURL = Environment.getExternalStorageDirectory() + "/" + strFileName;
 		
 				//strMediaURL = getPath(context, uriMediaURL);
