@@ -90,9 +90,9 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 		
 		if (intPos != -1)
 		{
-		  //Uri myUri = Uri.parse(strMediaURL);
-		  //String strPath = getPath(context, myUri);
-		  //objFile = new File(strPath);	
+		  Uri myUri = Uri.parse(strMediaURL);
+		  String strPath = getPath(context, myUri);
+		  objFile = new File(strPath);	
 		}
 		
 		//File objFile = new File(strMediaURL);
@@ -311,6 +311,15 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 	
 	            return getDataColumn(context, contentUri, null, null);
 	        }
+	        // DownloadsProvider
+	        else if (isGoogleDocsDocument(uri)) {
+	
+	            final String id = DocumentsContract.getDocumentId(uri);
+	            final Uri contentUri = ContentUris.withAppendedId(
+	                    Uri.parse("content://com.google.android.apps.docs.storage"), Long.valueOf(id));
+	
+	            return getDataColumn(context, contentUri, null, null);
+	        }
 	        // MediaProvider
 	        else if (isMediaDocument(uri)) {
 	            final String docId = DocumentsContract.getDocumentId(uri);
@@ -402,5 +411,13 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 	 */
 	public static boolean isMediaDocument(Uri uri) {
 	    return "com.android.providers.media.documents".equals(uri.getAuthority());
+	}
+	
+	/**
+	 * @param uri The Uri to check.
+	 * @return Whether the Uri authority is Google Docs Provider.
+	 */
+	public static boolean isGoogleDocsDocument(Uri uri) {
+	    return "com.google.android.apps.docs.storage".equals(uri.getAuthority());
 	}
 }
