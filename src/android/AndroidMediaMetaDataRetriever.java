@@ -146,11 +146,13 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 			if (strMediaURL.startsWith("content://") == true)
 			{
 				strMediaURL = getPath(context, uriMediaURL);
+				Log.i("CC", "VIDEOstrMediaURL = " + strMediaURL);	
 				//webView.sendJavascript("onAndroidFileSelectedPathError();");
 				//return;
 			}
 			
 			Bitmap bmThumbnail = ThumbnailUtils.createVideoThumbnail(strMediaURL,Thumbnails.MINI_KIND);
+			Log.i("CC", "ERRRRRRRRR = " + strMediaURL);
 			//Bitmap bmThumbnail = ThumbnailUtils.createVideoThumbnail(strFilePath,Thumbnails.MINI_KIND);
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
 			bmThumbnail.compress(Bitmap.CompressFormat.JPEG, 100, baos);
