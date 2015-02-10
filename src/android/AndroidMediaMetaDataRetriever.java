@@ -84,7 +84,7 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 		
 		JSONObject returnJSON = new JSONObject();
 		
-		Uri myUri = Uri.parse(strMediaURL)
+		Uri myUri = Uri.parse(strMediaURL);
 		String strPath = getPath(context, myUri);
 		File objFile = new File(strPath);
 		//File objFile = new File(strMediaURL);
