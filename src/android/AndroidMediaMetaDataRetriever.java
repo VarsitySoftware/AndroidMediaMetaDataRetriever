@@ -224,7 +224,8 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 				returnJSON.put("fileLatitude", strFileLocation);
 				returnJSON.put("fileLongitude", strFileLocation);				
 				returnJSON.put("fileFPS", "0");
-				returnJSON.put("videoAngleInDegree", strVideoRotation);
+				//returnJSON.put("videoAngleInDegree", strVideoRotation);
+				returnJSON.put("fileAngle", strVideoRotation);
 				returnJSON.put("fileDuration", lngDurationInSeconds);				
 				returnJSON.put("base64", strThumbnail);
 				//returnJSON.put("base64", "");
@@ -236,9 +237,9 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 				Log.i("CC", "fileLocation = " + strFileLocation);
 				Log.i("CC", "fileType = " + strFileMimeType);
 				Log.i("CC", "fileFPS = " + strBitrate);
-				Log.i("CC", "videoAngleInDegree = " + strVideoRotation);
+				Log.i("CC", "fileAngle = " + strVideoRotation);
 				Log.i("CC", "fileDuration = " + lngDurationInSeconds);
-				Log.i("CC", "base64 = " + strThumbnail);
+				//Log.i("CC", "base64 = " + strThumbnail);
 				//Log.i("CC", "fileSize = " + lngLength);
 			}
 			catch (JSONException e)
