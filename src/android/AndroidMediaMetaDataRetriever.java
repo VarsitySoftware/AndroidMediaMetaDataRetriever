@@ -94,11 +94,6 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 		  Uri myUri = Uri.parse(strMediaURL);
 		  String strPath = getPath(context, myUri);
 		  objFile = new File(strPath);	
-		  
-		  Cursor returnCursor = context.getContentResolver().query(myUri, null, null, null, null);
-		  int sizeIndex = returnCursor.getColumnIndex(OpenableColumns.SIZE);
-		  returnCursor.moveToFirst();
-		  Log.i("CC", "XXXXXXsizeIndex = " + Long.toString(returnCursor.getLong(sizeIndex)));
 		}
 		
 		//File objFile = new File(strMediaURL);
@@ -108,6 +103,22 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 		
 		long lngLength = objFile.length();
 		long lngLastModified = objFile.lastModified() / 1000; // DIVIDE BY 1000 TO REMOVE MICROSECONDS IN 13 DIGIT NUMBER
+		
+		if (lngLength == 0)
+		{
+		  try
+		  {
+		    Cursor returnCursor = context.getContentResolver().query(myUri, null, null, null, null);
+		    int sizeIndex = returnCursor.getColumnIndex(OpenableColumns.SIZE);
+		    returnCursor.moveToFirst();
+		    lngLength = returnCursor.getLong(sizeIndex);
+		    Log.i("CC", "XXXXXXsizeIndex = " + Long.toString(returnCursor.getLong(sizeIndex)));	
+		  }
+		  catch(JSONException e)
+		  {
+		  	
+		  }
+		}
 				
 		String strDeviceKey = Secure.getString(context.getContentResolver(), Secure.ANDROID_ID);
 		
