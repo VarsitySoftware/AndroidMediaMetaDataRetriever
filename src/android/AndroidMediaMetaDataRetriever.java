@@ -179,7 +179,8 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 		    //Log.i("CC", "video strThumbnail = " + strThumbnail);
 		    
 			MediaMetadataRetriever retriever  = new MediaMetadataRetriever();
-			retriever.setDataSource(strMediaURL);			
+			//retriever.setDataSource(strMediaURL);			
+			retriever.setDataSource(context, uriMediaURL);			
 			
 			String strDurationInMilliseconds = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION);
 			String strBitrate = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_BITRATE);
