@@ -12,7 +12,7 @@
     </engines>
         
     <js-module src="www/android/androidmediametadataretriever.js" name="AndroidMediaMetaDataRetriever">
-        <clobbers target="window.plugins.androidMediaMetaDataRetriever" />
+        <clobbers target="window.AndroidMediaMetaDataRetriever" />
     </js-module>
 
     <!-- android -->
