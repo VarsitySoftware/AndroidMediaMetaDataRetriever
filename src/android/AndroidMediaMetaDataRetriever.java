@@ -143,6 +143,8 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 		
 		if (strFileType.equals("1")) // 1 == video
 		{	
+			Bitmap bmThumbnail = null;
+			
 			if (strMediaURL.startsWith("content://") == true)
 			{
 				//String res = null;
@@ -155,13 +157,19 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 			        //cursor.close();
 			        //strMediaURL = "file://" + res;
     
-				strMediaURL = "file://" + getPath(context, uriMediaURL);
-				Log.i("CC", "VIDEOstrMediaURL = " + strMediaURL);	
+				//strMediaURL = "file://" + getPath(context, uriMediaURL);
+				String strPath = getPath(context, uriMediaURL);
+				bmThumbnail = ThumbnailUtils.createVideoThumbnail(strPath,Thumbnails.MINI_KIND);
+				Log.i("CC", "VIDEOstrMediaURL = " + strPath);	
 				//webView.sendJavascript("onAndroidFileSelectedPathError();");
 				//return;
 			}
+			else
+			{
+				bmThumbnail = ThumbnailUtils.createVideoThumbnail(strMediaURL,Thumbnails.MINI_KIND);	
+			}
 			
-			Bitmap bmThumbnail = ThumbnailUtils.createVideoThumbnail(strMediaURL,Thumbnails.MINI_KIND);
+			//Bitmap bmThumbnail = ThumbnailUtils.createVideoThumbnail(strMediaURL,Thumbnails.MINI_KIND);
 			Log.i("CC", "ERRRRRRRRR = " + strMediaURL);
 			//Bitmap bmThumbnail = ThumbnailUtils.createVideoThumbnail(strFilePath,Thumbnails.MINI_KIND);
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
