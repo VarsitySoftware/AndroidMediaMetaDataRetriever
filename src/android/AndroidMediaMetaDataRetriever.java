@@ -311,14 +311,14 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 	
 	            return getDataColumn(context, contentUri, null, null);
 	        }
-	        // DownloadsProvider
-	        else if (isGoogleDocsDocument(uri)) {
+	        // GoogleDriveProvider
+	        else if (isGoogleDriveDocument(uri)) {
 	
 	            final String id = DocumentsContract.getDocumentId(uri);
-	            final Uri contentUri = ContentUris.withAppendedId(
-	                    Uri.parse("content://com.google.android.apps.docs.storage"), id);
+	            //final Uri contentUri = ContentUris.withAppendedId(
+	            //        Uri.parse("content://com.google.android.apps.docs.storage"), id);
 	
-	            return getDataColumn(context, contentUri, null, null);
+	            return getDataColumn(context, uri, null, null);
 	        }
 	        // MediaProvider
 	        else if (isMediaDocument(uri)) {
@@ -417,7 +417,7 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 	 * @param uri The Uri to check.
 	 * @return Whether the Uri authority is Google Docs Provider.
 	 */
-	public static boolean isGoogleDocsDocument(Uri uri) {
+	public static boolean isGoogleDriveDocument(Uri uri) {
 	    return "com.google.android.apps.docs.storage".equals(uri.getAuthority());
 	}
 }
