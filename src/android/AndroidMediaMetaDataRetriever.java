@@ -29,6 +29,7 @@ import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Video.Thumbnails;
+import android.provider.OpenableColumns;
 
 import android.app.Activity;
 import android.util.Base64;
