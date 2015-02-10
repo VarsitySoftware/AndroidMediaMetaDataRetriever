@@ -117,7 +117,7 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 		  }
 		  catch(JSONException e)
 		  {
-		  	
+		    Log.i("CC", "JSONException = " + e.toString());
 		  }
 		}
 				
