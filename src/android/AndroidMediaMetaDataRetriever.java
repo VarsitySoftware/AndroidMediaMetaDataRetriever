@@ -81,6 +81,7 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 
     private void getAndroidMetadata(String strMediaURL, String strFileType) throws IOException {
 		
+		Uri uriMediaURL = Uri.parse(strMediaURL);
 		Context context = this.cordova.getActivity().getApplicationContext();
 		
 		JSONObject returnJSON = new JSONObject();
@@ -91,8 +92,8 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 		
 		if (intPos != -1)
 		{
-		  Uri myUri = Uri.parse(strMediaURL);
-		  String strPath = getPath(context, myUri);
+		  //Uri myUri = Uri.parse(strMediaURL);
+		  String strPath = getPath(context, uriMediaURL);
 		  objFile = new File(strPath);	
 		}
 		
@@ -108,7 +109,7 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 		{
 		  try
 		  {
-		    Cursor returnCursor = context.getContentResolver().query(myUri, null, null, null, null);
+		    Cursor returnCursor = context.getContentResolver().query(uriMediaURL, null, null, null, null);
 		    int sizeIndex = returnCursor.getColumnIndex(OpenableColumns.SIZE);
 		    returnCursor.moveToFirst();
 		    lngLength = returnCursor.getLong(sizeIndex);
