@@ -221,8 +221,8 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 				returnJSON.put("fileWidth", strVideoWidth);
 				returnJSON.put("fileHeight", strVideoHeight);
 				returnJSON.put("fileOrientation", strFileOrientation);
-				returnJSON.put("fileLatitude", strFileLocation;
-				returnJSON.put("fileLongitude", strFileLocation;				
+				returnJSON.put("fileLatitude", strFileLocation);
+				returnJSON.put("fileLongitude", strFileLocation);				
 				returnJSON.put("fileFPS", "0");
 				returnJSON.put("videoAngleInDegree", strVideoRotation);
 				returnJSON.put("fileDuration", lngDurationInSeconds);				
