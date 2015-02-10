@@ -115,9 +115,9 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 		    lngLength = returnCursor.getLong(sizeIndex);
 		    Log.i("CC", "XXXXXXsizeIndex = " + Long.toString(returnCursor.getLong(sizeIndex)));	
 		  }
-		  catch(JSONException e)
+		  catch (Exception e)
 		  {
-		    Log.i("CC", "JSONException = " + e.toString());
+			Log.i("CC", "JSONException = " + e.toString());
 		  }
 		}
 				
