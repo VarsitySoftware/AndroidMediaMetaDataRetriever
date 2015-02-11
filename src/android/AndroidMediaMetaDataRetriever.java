@@ -61,8 +61,9 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
     			//Log.i("CC", "AAAA = ");
     			String strMediaURL = args.getString(0);
     			String strFileType = args.getString(1);
-    			
-    			this.getAndroidMetadata(strMediaURL, strFileType);
+    			String strCallback = args.getString(2);
+    		
+    			this.getAndroidMetadata(strMediaURL, strFileType, strCallback);
     	        
     			//Log.i("CC", "ZZZZ = ");
                 //callback.success("2");    
@@ -79,7 +80,7 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
         return true;     
     }
 
-    private void getAndroidMetadata(String strMediaURL, String strFileType) throws IOException {
+    private void getAndroidMetadata(String strMediaURL, String strFileType, String strCallback) throws IOException {
 		
 		Uri uriMediaURL = Uri.parse(strMediaURL);
 		Context context = this.cordova.getActivity().getApplicationContext();
@@ -311,8 +312,10 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 		String strJSON = returnJSON.toString();
 		//Log.i("CC", "strJSON = " + strJSON);
 		
-		webView.sendJavascript("onAndroidFileSelectedSuccess('" + strJSON + "');");
+		//sendJavascript("onAndroidFileSelectedSuccess('" + strJSON + "');");
+		sendJavascript(strCallback + "('" + strJSON + "');");
 		
+		strCallback
 		//callback.success(returnJSON);
 
 	}	
