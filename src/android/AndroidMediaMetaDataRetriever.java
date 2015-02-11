@@ -315,7 +315,6 @@ public class AndroidMediaMetaDataRetriever extends CordovaPlugin {
 		//sendJavascript("onAndroidFileSelectedSuccess('" + strJSON + "');");
 		sendJavascript(strCallback + "('" + strJSON + "');");
 		
-		strCallback
 		//callback.success(returnJSON);
 
 	}	
