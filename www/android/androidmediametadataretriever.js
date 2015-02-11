@@ -1,1 +1,1 @@
-window.getAndroidMetadata = function (strFilePath, strFileType, onStart, onFail) { cordova.exec(onStart, onFail, "AndroidMediaMetaDataRetriever", "getAndroidMetadata", [strFilePath, strFileType]); };
+window.getAndroidMetadata = function (strFilePath, strFileType, strCallback, onStart, onFail) { cordova.exec(onStart, onFail, "AndroidMediaMetaDataRetriever", "getAndroidMetadata", [strFilePath, strFileType, strCallback]); };
